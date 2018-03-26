@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="简单的python第二节---认识python"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="hanayuki"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://kafuuchino.github.io/blog"/>
+  
+    <link rel="alternate" href="/atom.xml" title="hanayuki" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>hanayuki</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/blog/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/blog/img/mv_img.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">简单的python第二节---认识python</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/blog/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/blog/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/bbrabbitt/blog/issues/new">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:soranomethods@yahoo.co.jp">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-03-27</span>
+            <span class="time">01:03:12</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/blog/categories/教程/">教程</a> / <a href="/blog/categories/教程/python教程/">python教程</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/blog/tags/python/">#python</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>那么，今天我们就开始正式学习python了。首先，我们先来认识一下这位新朋友。python出生于1989年，是由Guido van Rossum开发的一款脚本语言。python的语法十分新颖而又简洁，因此吸引了大量的用户使用。现在，python不仅是作为一款简单方便的计算机语言供一些软件公司使用，同时也在学术和科研领域发挥了很大的用途。<a id="more"></a>可能目前我们还不能完全理解这段话中的一些术语，也不能感受到python的强大，但这都没有关系，我们会在以后慢慢学习到python的方方面面，并亲自写出几个真正的程序。</p>
+<h1>一些计算机术语</h1>
+<p>虽然这个教程是面向完全没有计算机基础的人的，但学习python本质上就是从一个门外汉到一个熟练掌握python的各种技巧并能懂得使用python解决自己的问题的过程。所以在这篇教程一开始我会使用一些例子方便大家理解，但随着教学的深入我也会更多的使用一些术语，同时在每个术语后注上英文，这样以后大家在看文档或者他人写的博客时才不会感到吃力。所以，在这里我要先介绍一些术语来为大家打下一些基础。</p>
+<ul>
+<li>
+<p>解释器(interpreter)</p>
+<p>首先我们必须要了解的是，计算机处理的都是枯燥的0和1。我们电脑中的CPU十分努力地在一秒钟内加减数十亿个0和1才能让我们看到如此丰富多彩的网络世界。但是，我们的程序一般是使用人类的语言写出来的，计算机怎样才能看懂呢？要达到这点有好几种不同的办法，python使用的是一个叫解释器的特殊的程序。</p>
+<p>我们可以把解释器想象成一个翻译员，它会一行一行地读我们写的代码，然后用自己渊博的学识将它转化成CPU能看懂的语言。同时，它还会把CPU执行的结果再翻译成我们看得懂的语言然后根据我们的指令显示出来。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>解释器是一个十分聪明而且十分严格的家伙，如果我们代码中出了点语法错误，那么解释器就会毫不留情地指出来让我们纠正。因此大家看到自己不懂的东西时尽可能地去多做实验，看看哪些是正确的，哪些错误会被解释器揪出来。这样我们写代码的水平也会有很大的提高。</p>
+</li>
+<li>
+<p>脚本语言(script language)</p>
+<p>在这篇文章一开始我们就提到过python是一个<strong>脚本语言</strong>。简单地讲脚本语言就是使用解释器运行的语言<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>。脚本语言的一大优势是学习简单，使用方便。我们随时随地都可以打开电脑写出一些python脚本辅助我们工作。在开发一些大型项目的时候，使用python这样的脚本语言写一个大致的模型也是对开发很有帮助的。</p>
+</li>
+<li>
+<p>CPython</p>
+<p>Cpython是我们在下一节讲安装python的时候将要安装的解释器的名字，也是python官方开发的解释器。你可能会问，难道python的解释器有很多版本吗？的确是这样。由于python句法简洁，也有着很多便利的功能，很多程序员会将它使用在不同的领域。然而python官方的解释器运行起来相对比较缓慢，或者不能用到其他语言的一些优秀的特性。因此人们便开发出了各种有着特殊用途的python解释器。但对于我们以及大部分程序员来说，官方的解释器已经足够强大，而且能使用上python最新的特性，因此在这个教程中我们会选用Cpython。</p>
+</li>
+<li>
+<p>软件包管理器</p>
+<p>在网络上，永远都不会缺乏大佬级别的程序员。而这些大佬也写出了很多有用的包(package)——也就是我们拿过来就可以使用的一些能够扩充python功能的软件——供我们使用。而使用它们的第一步就是要安装。而软件包管理器就是一个尽心尽职的管家，它帮我们安装，更新和卸载各种各样的包，这样我们就可以专心致志地写代码而不需要关心一些麻烦的安装问题了。</p>
+</li>
+</ul>
+<p>那么，这节就到这里结束了，大家现在已经有了一些基础的知识储备，那么下一节我们就来安装python，并写出我们第一行python语句吧！</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这种说法并不完全正确，这里只是为了简化而如此介绍。有兴趣的可以看一看<strong>简单的python附加内容1-关于第二节中一些术语的详细说明</strong> <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/blog/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
