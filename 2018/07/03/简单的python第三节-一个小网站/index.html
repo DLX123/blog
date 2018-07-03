@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="简单的python第二节---认识python"/>
+  <meta property="og:title" content="简单的python第三节-一个小网站"/>
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="hanayuki"/>
   <meta property="og:type" content="article" />
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">简单的python第二节---认识python</p>
+          <p class="title">简单的python第三节-一个小网站</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -96,7 +96,7 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2018-03-27</span>
+            <span class="date">2018-07-03</span>
             <span class="time">21:58:04</span>
           </span>
           
@@ -119,21 +119,63 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>那么，今天我们就开始正式学习python了。大家是不是有些兴奋呢？那么，就让我们一起来看看python到底是什么吧！<a id="more"></a></p>
-<h1>python简介</h1>
-<p>首先，我们先来认识一下这位新朋友。python出生于1989年，是由Guido van Rossum开发的一款编程语言。python的语法十分新颖而又简洁，因此吸引了大量的用户使用。现在，python不仅是作为一款简单方便的计算机语言供一些软件公司使用，同时也在学术和科研领域发挥了很大的用途。可能目前我们还不能完全理解这段话中的一些术语，也不能感受到python的强大，但这都没有关系，我们会在以后慢慢学习到python的方方面面，并亲自写出几个真正的程序。</p>
-<h1>我们能用python做什么？</h1>
-<p>由于python能轻松地连接一些用C或者C<ins>语言编写的库（使用C和C</ins>能够让代码以较快的速度运行），人们也在不断发掘它的用途。下面列举一些python使用的知名案例。</p>
-<ul>
-<li>google内部的大量测试脚本均使用python编写</li>
-<li>豆瓣网和Youtube在最初的时候几乎全部使用python作为支撑其运行的程序</li>
-<li>许多神经网络机器学习框架都有python接口供工程师调用，比如mxnet, pytorch和caffe</li>
-<li>NASA使用python的numpy库和scipy库进行科学计算与建模</li>
-</ul>
-<p>虽然目前我们还不知道这些用途到底有什么意义，也不知道什么是测试脚本啊，神经网络啊之类的东西，但我们可以看到，python的使用领域从商业开发到科学计算都有涉及。如果在第一次学习一门语言时可以认识到自己以后可以做这么厉害的东西，甚至能接触到Google的工程师的工具，以后的学习也会多一点兴趣吧。</p>
-<h1>这篇教程怎么介绍python呢？</h1>
-<p>python是一门非常复杂的语言，我们这篇教程也只能涉及其中的一小部分。由于使用python开发一个我们正常双击图标就能打开的程序是十分困难的，因此我们将制作一个能在浏览器里运行的程序，也就是我们平时上网浏览的网站了。我将在下一节展示一个小小的网站程序，我们的第一步也就是从这个小网站开始。在最后我们的目标是制作出一个完整的博客程序。那么让我们一起努力吧！</p>
-<p>那么，这节就到这里结束了，大家现在已经有了一些基础的知识储备，那么下一节我们就来看一看这个小网站的样子，然后安装python，写出我们第一行python代码吧！</p>
+          <p>在上一节中，我们认识了python是怎样的一门语言，但是我们仍然没见过一行python代码是长什么样子的。那么今天我们就来看看到底什么样的代码是python。</p>
+<h1>一些python代码</h1>
+<p>这一节我想给大家展示一下接下来我们要做的一个小网站，在此之前我认为先把代码贴出来比较能让大家清楚这是一个非常简单的小程序，大家不必过于惊慌。那么我们来看看代码长什么样吧。</p>
+<p><a href="http://main.py" target="_blank" rel="noopener">main.py</a></p>
+<pre><code>from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+	return render_template(&quot;test.html&quot;)
+
+@app.route('/login', methods=[&quot;POST&quot;, &quot;GET&quot;])
+def login():
+	if request.method == &quot;POST&quot;:
+		username = request.form.get(&quot;username&quot;)
+		password = request.form.get('password')
+		if username == &quot;admin&quot; and password == &quot;123456&quot;:
+			return &quot;success&quot;
+		else:
+			return &quot;failed&quot;
+	else:
+		return &quot;login&quot;
+if __name__ == '__main__':
+	app.run()
+</code></pre>
+<p>main.html</p>
+<pre><code>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;test&lt;/title&gt;
+		&lt;style&gt;
+			#hello {
+				color: red;
+			}
+		&lt;/style&gt;
+
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			function checkform() {
+				password = document.getElementById(&quot;password&quot;).value;
+				if (password.length&lt;5){
+					alert(&quot;password too short!&quot;);
+					return false;
+				}
+				return true;
+			}
+		&lt;/script&gt;
+		&lt;p id=&quot;hello&quot;&gt;hello world!&lt;/p&gt;
+		&lt;form method=&quot;POST&quot; action=&quot;/login&quot; id=&quot;loginForm&quot; onsubmit=&quot;return 	checkform()&quot;&gt;
+			&lt;input name='username' id='username' type='text'&gt;用户名&lt;/input&gt;
+			&lt;input name='password' id='password' type='password'&gt;密码&lt;/input&gt;
+			&lt;input name='submit' id='submit' type='submit' value='提交'&gt;&lt;/input&gt;
+		&lt;/form&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>大家可以看到，我们写的代码包含了两个文件，第一个文件是以py结尾的，这就是python代码，而第二个html是什么好像没有人说过。html实际上就是浏览器使用的语言，我们平时看的网页其实都是html写成的。这篇教程也会在下一节开始开设一个全新的板块教授html，css和javascript(这三门语言是网页编写必须的语言)。放心，虽然看起来多学三门语言十分可怕，但html和css实际上是十分简单易懂的，而javascript和python也比较相似，而且我也会延续简单的讲课风格，相信大家一定能够理解。</p>
 
         </div>
       </div>
