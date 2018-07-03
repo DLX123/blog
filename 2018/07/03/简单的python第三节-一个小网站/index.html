@@ -97,7 +97,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-07-03</span>
-            <span class="time">21:58:04</span>
+            <span class="time">22:03:50</span>
           </span>
           
           <!--  Categories  -->
@@ -119,7 +119,7 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>在上一节中，我们认识了python是怎样的一门语言，但是我们仍然没见过一行python代码是长什么样子的。那么今天我们就来看看到底什么样的代码是python。</p>
+          <p>在上一节中，我们认识了python是怎样的一门语言，但是我们仍然没见过一行python代码是长什么样子的。那么今天我们就来看看到底什么样的代码是python。<a id="more"></a></p>
 <h1>一些python代码</h1>
 <p>这一节我想给大家展示一下接下来我们要做的一个小网站，在此之前我认为先把代码贴出来比较能让大家清楚这是一个非常简单的小程序，大家不必过于惊慌。那么我们来看看代码长什么样吧。</p>
 <p><a href="http://main.py" target="_blank" rel="noopener">main.py</a></p>
@@ -128,51 +128,51 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-	return render_template(&quot;test.html&quot;)
+    return render_template(&quot;test.html&quot;)
 
 @app.route('/login', methods=[&quot;POST&quot;, &quot;GET&quot;])
 def login():
-	if request.method == &quot;POST&quot;:
-		username = request.form.get(&quot;username&quot;)
-		password = request.form.get('password')
-		if username == &quot;admin&quot; and password == &quot;123456&quot;:
-			return &quot;success&quot;
-		else:
-			return &quot;failed&quot;
-	else:
-		return &quot;login&quot;
+    if request.method == &quot;POST&quot;:
+        username = request.form.get(&quot;username&quot;)
+        password = request.form.get('password')
+        if username == &quot;admin&quot; and password == &quot;123456&quot;:
+            return &quot;success&quot;
+        else:
+            return &quot;failed&quot;
+    else:
+        return &quot;login&quot;
 if __name__ == '__main__':
-	app.run()
+    app.run()
 </code></pre>
 <p>main.html</p>
 <pre><code>&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;test&lt;/title&gt;
-		&lt;style&gt;
-			#hello {
-				color: red;
-			}
-		&lt;/style&gt;
+    &lt;head&gt;
+        &lt;title&gt;test&lt;/title&gt;
+        &lt;style&gt;
+            #hello {
+                color: red;
+            }
+        &lt;/style&gt;
 
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;script type=&quot;text/javascript&quot;&gt;
-			function checkform() {
-				password = document.getElementById(&quot;password&quot;).value;
-				if (password.length&lt;5){
-					alert(&quot;password too short!&quot;);
-					return false;
-				}
-				return true;
-			}
-		&lt;/script&gt;
-		&lt;p id=&quot;hello&quot;&gt;hello world!&lt;/p&gt;
-		&lt;form method=&quot;POST&quot; action=&quot;/login&quot; id=&quot;loginForm&quot; onsubmit=&quot;return 	checkform()&quot;&gt;
-			&lt;input name='username' id='username' type='text'&gt;用户名&lt;/input&gt;
-			&lt;input name='password' id='password' type='password'&gt;密码&lt;/input&gt;
-			&lt;input name='submit' id='submit' type='submit' value='提交'&gt;&lt;/input&gt;
-		&lt;/form&gt;
-	&lt;/body&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+            &lt;script type=&quot;text/javascript&quot;&gt;
+            function checkform() {
+                password = document.getElementById(&quot;password&quot;).value;
+                if (password.length&lt;5){
+                    alert(&quot;password too short!&quot;);
+                    return false;
+                }
+                return true;
+            }
+        &lt;/script&gt;
+        &lt;p id=&quot;hello&quot;&gt;hello world!&lt;/p&gt;
+        &lt;form method=&quot;POST&quot; action=&quot;/login&quot; id=&quot;loginForm&quot; onsubmit=&quot;return 	checkform()&quot;&gt;
+            &lt;input name='username' id='username' type='text'&gt;用户名&lt;/input&gt;
+            &lt;input name='password' id='password' type='password'&gt;密码&lt;/input&gt;
+            &lt;input name='submit' id='submit' type='submit' value='提交'&gt;&lt;/input&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <p>大家可以看到，我们写的代码包含了两个文件，第一个文件是以py结尾的，这就是python代码，而第二个html是什么好像没有人说过。html实际上就是浏览器使用的语言，我们平时看的网页其实都是html写成的。这篇教程也会在下一节开始开设一个全新的板块教授html，css和javascript(这三门语言是网页编写必须的语言)。放心，虽然看起来多学三门语言十分可怕，但html和css实际上是十分简单易懂的，而javascript和python也比较相似，而且我也会延续简单的讲课风格，相信大家一定能够理解。</p>
